@@ -39,7 +39,9 @@ header#top {
 /* 1-1 제목 */
 /* 2. 메인영역 */
 #top h1 {
-  color: hotpink;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: whitesmoke;
   text-shadow: 2px 2px 2px #555;
   /*text-shadow: 2px 2px 2px #555;*/
 }
