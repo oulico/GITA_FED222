@@ -62,11 +62,10 @@ header#top {
 /* id가 cont인 main*/
 main#cont {
   margin-bottom: 20px;
+  min-height: 570px;
+  text-align: left;
 }
 
-main#cont img {
-  width: 100%;
-}
 footer#info {
   background-color: rgba(196, 180, 180, 0.346);
 }
