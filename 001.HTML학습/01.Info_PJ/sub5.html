@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>네이버 뉴스 요약 - TV/연예</title>
+    <link rel="stylesheet" href="./css/sub.css" />
+  </head>
+  <!-- link 요소 - 외부 스타일 시트 호출(익스터널 방식)
+                - rel(relevent) 속성은 관련있는 셋팅을 지정하는 속성
+                - href 하이퍼텍스트 레퍼런스 속성은 파일위치 지정 
+                - html5이전 버전에서는 type="text/css" 속성을 씀
+  -->
+  <body>
+    <header id="top" class="ct">
+      <h1>네이버 요약뉴스 - TV/연예</h1>
+      <nav class="gnb">
+        <a href="index.html"
+          ><img src="./images/logo.png" alt="네이버로고" style="width: 20px"
+        /></a>
+        <a href="sub1.html">정치</a> | <a href="sub2.html">경제</a> |
+        <a href="sub3.html">사회</a> | <a href="sub4.html">IT/과학</a> |
+        <a href="sub5.html">TV/연예</a> |
+      </nav>
+    </header>
+    <!-- 2. 메인영역 -->
+    <main id="cont" class="ct">
+      <!-- 2-1. 언론사 로고 -->
+      <div class="prlogo"></div>
+      <!-- 2-2. 기사제목 -->
+      <h2 class="atit"></h2>
+      <!-- 2-3. 기사사진(+사진설명) -->
+      <figure class="afig">
+        <!-- figure 요소 : 이미지나 표, 그림 등을 넣는 박스
+              -figcation 요소: 이미지 설명 박스(옵션) -->
+      </figure>
+      <!-- 2-4. 기사내용 -->
+      <section class="atc"></section>
+      <!-- 2-5. 기자소개 -->
+      <div class="byrep"></div>
+      <!-- 2-6. 원본기사링크 -->
+      <div class="orga"></div>
+    </main>
+
+    <footer id="info" class="ct">
+      <address>
+        서울시 강남구 역삼동 119 대호 B 8F <br />
+        대표 : <span class="fc fd">LJH</span> <br />
+        Tel : 010-2030-4050
+      </address>
+    </footer>
+  </body>
+</html>
+
+<!-- 
+    [html 요소들]
+    1. div : 컨텐츠 구분박스 -> 옆에 아무도 못옴 -> 블록요소라고 부름
+    2. div의 형제들 - 시맨틱 요소 : 
+      1) header
+      2) main 한페이지에 한번만 사용
+      3) footer
+      4) nav 네이게이션 메뉴
+      5) aside 부수적인 내용
+      6) section 내용 구분을 위한 영역
+      7) article 독립적인 내용을 다루기 위한 영역 (보통 article 이나 section은 w3c에서 heading(h1~h6) 태그를 내용으로 함께 쓸 것을 권고.)
+
+    3. img 요소: 이미지를 불러오는 요소 
+    - src 속성 : 이미지 경로셋팅 
+    - alt 속성 : 이미지설명 (alt는 필수속성으로 웹접근성을 위한 속성 - 스크린 리더기에서 이것을 읽어준다)
+    - title 속성 : 툴팁 띄워줌
+    ______________________________________
+    [요소 공통 속성 - 어느 요소나 쓸 수 있다]
+    1. style 속성 = css 셋팅을 해주는 인라인 속성 -> 값은 아래와 같이 셋팅한다
+    style="attribute name:value;attribute name:value;"
+    -->

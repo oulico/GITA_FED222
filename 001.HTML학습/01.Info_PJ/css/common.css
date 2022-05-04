@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* Info PJ 공통 클래스 - common.css */
+
+/*외부 css파일은 반드시 상단에 문자셋 인코딩 셋팅을 해야한다*/
+/* 스타일 시트를 사용하는 영역, CSS문법만 사용가능 */
+/* 공통 서식*/
+
+/* 다중클래스 적용연습 */
+
+.fc {
+  color: skyblue;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.fd {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.ct {
+  width: 760px;
+  border: solid 1px whitesmoke;
+  padding: 10px;
+  margin: 0 auto;
+  /* 블록 박스 중앙 정렬
+        margin: value; (4방향)
+        margin: value; value; (위아래 양쪽)
+        margin: value; value; value; (위 양쪽 아래)
+        margin: value; value; value; value;(위 오른 아래 왼 시계방향)
+        padding도 같다.
+        */
+  text-align: center;
+}
+/* 1 헤더영역 */
+header#top {
+  background-color: yellowgreen;
+  margin-bottom: 20px;
+}
+/* 1-1 제목 */
+/* 2. 메인영역 */
+#top h1 {
+  color: hotpink;
+  text-shadow: 2px 2px 2px #555;
+  /*text-shadow: 2px 2px 2px #555;*/
+}
+
+.gnb a {
+  color: rgb(4, 82, 82);
+  /* 밑줄 변경 text-decoration */
+  text-decoration: none;
+  font-weight: bold;
+}
+/* 메뉴a에 마우스 오버시 */
+.gnb a + a:hover {
+  text-decoration: overline;
+  color: hotpink;
+}
+
+.gnb img {
+  vertical-align: -5px;
+}
+/* id가 cont인 main*/
+main#cont {
+  margin-bottom: 20px;
+}
+
+main#cont img {
+  width: 100%;
+}
+footer#info {
+  background-color: rgba(196, 180, 180, 0.346);
+}
+
+footer#info address {
+  padding: 20px;
+  font-style: normal;
+  color: darkblue;
+  font-size: 14px;
+  line-height: 1.6;
+  /* font size 기본 사이즈는 12pt = 16 px*/
+}
+
+address span {
+  font-style: italic;
+}
