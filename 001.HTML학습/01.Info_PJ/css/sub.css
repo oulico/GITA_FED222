@@ -17,6 +17,11 @@
 /* @import url(파일주소); */
 @import url(common.css);
 
+/* 서브페이지 메인컨텐츠 박스 */
+main#cont{
+  padding: 20px;
+}
+
 /************** 2-1. 언론사 로고 *****************/
 .prlogo img {
   height: 32px;
@@ -29,6 +34,34 @@
 
 }
 /************** 2-3. 기사사진(+사진설명) *****************/
+.afig{
+  margin: 15px 0;
+}
+.afig img{
+  width: 100%;
+  /* 부모박스를 기준으로 채움 */
+  /* 이미지는 가로, 세로, 중 하나만 크기를 주면 나머지는 자동으로 비율을 유지한다. */
+}
+
+.afig figcaption{
+  text-align: center;
+  /* 글자 정렬은 블록박스에서 적용해야 내부의 인라인 요소의 정렬이 변경된다. (인라인에서 하면 적용안됨) */
+  padding-bottom: 50px;
+
+}
+/* 이미지 설명글 작은글자박스 */
+
+.afig small{
+  font-family: "굴림";
+  color: #777;
+}
+
 /************** 2-4. 기사내용 *****************/
+.atc{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 17px;
+  /* 줄간격 */
+  line-height: 1.6;
+}
 /************** 2-5. 기자소개 *****************/
 /************** 2-6. 원본기사링크 *****************/

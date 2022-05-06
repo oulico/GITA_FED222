@@ -30,6 +30,7 @@
         padding도 같다.
         */
   text-align: center;
+  box-sizing: border-box;
 }
 /* 1 헤더영역 */
 header#top {
