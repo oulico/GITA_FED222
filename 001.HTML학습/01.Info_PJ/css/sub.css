@@ -63,5 +63,28 @@ main#cont{
   /* 줄간격 */
   line-height: 1.6;
 }
+
+/* 인용구 박스 */
+
+.quote{
+  background-color: #ececec;
+  padding: 10px;
+}
+
+/* 인용구 제목 */
+.quote h3{
+  /* 글자중앙 */
+  text-align: center;
+}
+/* 인용구 박스 */
+.quote blockquote{
+  font-size: 12px;
+  /* 들여쓰기 하는법 */
+  text-indent: 15px;
+  /* 양쪽 정렬하는법 */
+  text-align: justify;
+  line-height: 1.7;
+}
+
 /************** 2-5. 기자소개 *****************/
 /************** 2-6. 원본기사링크 *****************/
