@@ -27,8 +27,29 @@ main#cont{
   border-top: 1px solid #ccc;
   /* 보더위쪽: 두께 종류 색상 */
   margin-top: 25px;
+  /* 위쪽 마진 */
+}
+/*  메인 컨텐츠 아래 a요소 공통 */
+/* a의 기본셋팅을 변경함! - 글자색, 밑줄 */
+#cont a {
+  /* 글자색 color */
+  color: #222;
+  /* 글자데코 - text-decoration */
+  text-decoration: none;
+  /* 밑줄 없앰 */
+
+  /* 글자크기 */
+  font-size : 14px;
+  /* 글자체 - font-family */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/*  a요소 마우스 오버시 */
+#cont a:hover{
+  color: lightseagreen;
+  /* 글자데코 */
+  text-decoration: underline;
+}
 
 /************** 2-1. 언론사 로고 *****************/
 .prlogo img {
@@ -108,3 +129,10 @@ main#cont{
   width: 200px;
 }
 
+/* 포토뉴스 이미지 그림자 */
+.pnews img{
+  box-shadow: 2px 2px 5px #555;
+  
+  /* box-shadow: inset hoff voff blur spread #000; */
+  /* box-shadow: 내부그림자 x축 y축 경계흐림 확장 색; */
+}

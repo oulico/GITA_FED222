@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- 언어코드 참조 https://www.w3schools.com/tags/ref_language_codes.asp -->
+  <!-- 언어코드는 웹접근성에 기초하여 웹페이지의 설정 정보를 제공한다 -->
+  <!-- 언어코드 혹은 국가 코드를 사용할 수 있다. -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 반드시 2바이트 문자처리에 대한 인코딩속성 세팅을 해야한다. utf-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>쓸쓸하고 찬란하신(신)</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- 외부 css하나만 불러도 main.css에서 import하고 있는 3개의 기본 CSS가 같이 들어옴 -->
+  </head>
+
+  <body>
+    <!-- 1.상단영역 : 기본적으로 이중으로 박스를 구성하면 콘텐츠를 다루기 편함. 시맨틱 태그는 최대한 내용과 같아야 하므로 div 안에 header를 쓴다 -->
+    <div id="top">
+      <header class="inbox top"></header>
+    </div>
+    <!-- 2.메인영역 -->
+    <div>
+      <main class="inbox cont">
+        <!-- 캐릭터박스 -->
+        <div id="cbx">
+          <!-- 1. 공유 캐릭터 -->
+          <div class="cat">
+            <!-- 캐릭터 이미지박스 -->
+            <div class="ci">
+              <!-- 캐릭터 이미지 -->
+              <img src="./images/dc1.png" alt="공유" />
+              <!-- 캐릭터 이름이미지 -->
+              <span>
+                <img src="./images/d01.png" alt="진한이름" />
+                <img src="./images/d011.png" alt="흐린이름" />
+              </span>
+            </div>
+            <!-- 캐릭터 이미지 박스 -->
+            <!-- 캐릭터 설명박스 -->
+            <div class="cd">
+              <!-- 캐릭터 타이틀 -->
+              <!-- 캐릭터 설명 -->
+            </div>
+          </div>
+          <!-- 2. 김고은 캐릭터  -->
+          <div class="cat">
+            <div class="ci">
+              <!-- 캐릭터 이미지 -->
+              <img src="./images/dc2.png" alt="공유" />
+              <span>
+                <img src="./images/d02.png" alt="진한이름" />
+                <img src="./images/d022.png" alt="흐린이름" />
+              </span>
+            </div>
+            <!-- 캐릭터 이미지 박스 -->
+            <!-- 캐릭터 설명박스 -->
+            <div class="cd">
+              <!-- 캐릭터 타이틀 -->
+              <!-- 캐릭터 설명 -->
+            </div>
+          </div>
+          <!-- 3. 이동욱 캐릭터  -->
+          <div class="cat">
+            <div class="ci">
+              <!-- 캐릭터 이미지 -->
+              <img src="./images/dc3.png" alt="공유" />
+              <span>
+                <img src="./images/d03.png" alt="진한이름" />
+                <img src="./images/d033.png" alt="흐린이름" />
+              </span>
+            </div>
+            <!-- 캐릭터 이미지 박스 -->
+            <!-- 캐릭터 설명박스 -->
+            <div class="cd">
+              <!-- 캐릭터 타이틀 -->
+              <!-- 캐릭터 설명 -->
+            </div>
+          </div>
+          <!-- 4. 유인나 캐릭터  -->
+          <div class="cat">
+            <div class="ci">
+              <!-- 캐릭터 이미지 -->
+              <img src="./images/dc4.png" alt="공유" />
+              <span>
+                <img src="./images/d04.png" alt="진한이름" />
+                <img src="./images/d044.png" alt="흐린이름" />
+              </span>
+            </div>
+            <!-- 캐릭터 이미지 박스 -->
+            <!-- 캐릭터 설명박스 -->
+            <div class="cd">
+              <!-- 캐릭터 타이틀 -->
+              <!-- 캐릭터 설명 -->
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- 3.하단영역 -->
+    <div>
+      <footer class="inbox info"></footer>
+    </div>
+  </body>
+</html>
