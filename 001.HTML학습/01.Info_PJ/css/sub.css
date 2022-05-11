@@ -18,7 +18,7 @@
 @import url(common.css);
 
 /* 서브페이지 메인컨텐츠 박스 */
-main#cont{
+main#cont {
   padding: 20px;
 }
 
@@ -39,13 +39,14 @@ main#cont{
   /* 밑줄 없앰 */
 
   /* 글자크기 */
-  font-size : 14px;
+  font-size: 14px;
   /* 글자체 - font-family */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 /*  a요소 마우스 오버시 */
-#cont a:hover{
+#cont a:hover {
   color: lightseagreen;
   /* 글자데코 */
   text-decoration: underline;
@@ -56,38 +57,37 @@ main#cont{
   height: 32px;
 }
 /************** 2-2. 기사제목 *****************/
-.atit{
+.atit {
   font-size: 30px;
   font-family: "궁서", "굴림";
   font-weight: normal;
-
 }
 /************** 2-3. 기사사진(+사진설명) *****************/
-.afig{
+.afig {
   margin: 15px 0;
 }
-.afig img{
+.afig img {
   width: 100%;
   /* 부모박스를 기준으로 채움 */
   /* 이미지는 가로, 세로, 중 하나만 크기를 주면 나머지는 자동으로 비율을 유지한다. */
 }
 
-.afig figcaption{
+.afig figcaption {
   text-align: center;
   /* 글자 정렬은 블록박스에서 적용해야 내부의 인라인 요소의 정렬이 변경된다. (인라인에서 하면 적용안됨) */
   padding-bottom: 50px;
-
 }
 /* 이미지 설명글 작은글자박스 */
 
-.afig small{
+.afig small {
   font-family: "굴림";
   color: #777;
 }
 
 /************** 2-4. 기사내용 *****************/
-.atc{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.atc {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 17px;
   /* 줄간격 */
   line-height: 1.6;
@@ -95,19 +95,19 @@ main#cont{
 
 /* 인용구 박스 */
 
-.quote{
+.quote {
   background-color: #ececec;
   padding: 10px;
   background-clip: content-box;
 }
 
 /* 인용구 제목 */
-.quote h3{
+.quote h3 {
   /* 글자중앙 */
   text-align: center;
 }
 /* 인용구 박스 */
-.quote blockquote{
+.quote blockquote {
   font-size: 12px;
   /* 들여쓰기 하는법 */
   text-indent: 15px;
@@ -125,14 +125,21 @@ main#cont{
 }
 
 /* 오늘의 작품 이미지 사이즈 */
-.twork img{
+.twork img {
   width: 200px;
 }
 
 /* 포토뉴스 이미지 그림자 */
-.pnews img{
+.pnews img {
   box-shadow: 2px 2px 5px #555;
-  
+
   /* box-shadow: inset hoff voff blur spread #000; */
   /* box-shadow: 내부그림자 x축 y축 경계흐림 확장 색; */
+}
+/* 분야별 주요뉴스에 가상요소로 아이콘 넣기 */
+.secnews dt::before {
+  content: "🔥";
+}
+.secnews dd::before {
+  content: "👀";
 }

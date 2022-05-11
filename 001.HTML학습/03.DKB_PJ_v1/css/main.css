@@ -11,15 +11,15 @@
 body {
   /* 한번에 배경주기 */
   /* background: 색이반고윙크; */
-  background: 
-  url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
-  url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+  background: url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
+    url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
 }
 
 /********** 2. 메인영역 ************/
 /* 컨텐츠 속박스 */
 .cont {
   padding-top: 400px;
+  max-width: none;
 }
 /* 캐릭터 부모박스 */
 #cbx {
@@ -30,16 +30,26 @@ body {
   /* 높이값 - 자식 요소 float으로 높이값 안주면 0됨*/
   /* height: 300px; */
   /* float된 자식의 높이값 인식을 위해 overflow:hidden  */
-  overflow: hidden;
+  /* overflow: hidden; 여기서는 안씀 */
+  /*  -> 가상요소에 clear:both 사용할 것임 */
   /* 외곽선 */
   outline: 4px dotted gold;
 }
-
+/* 가상요소로 clear설정하기 */
+/* ::after로 맨 뒤에 가상요소 추가 */
+#cbx::after {
+  content: "";
+  /* content는 필수로 넣어야 한다.*/
+  display: block;
+  /* div와 비슷. 안쓰면 span가 비슷하다. */
+  clear: both;
+  /* 주의 block 요소에만 적용됨 */
+}
 .cat {
   /* 4등분 가로 크기는 몇? 24% */
   width: 24%;
   /* 사이간격을 위해 양쪽 마진을 % 값으로 셋팅 */
-  margin: 0 .5%;
+  margin: 0 0.5%;
   /* 25% - 양쪽마진(1%) = 24% */
   /* 양쪽마진을 0.5% 그런데 코딩시 앞의 0을 생략할 수 있다. */
 
@@ -60,8 +70,56 @@ body {
 2. float 자식요소 중 float이 아닌 마지막 요소에 float해제 속성인 clear 설정하기!
   */
 }
-
-.ci>img{
+.ci > img {
   width: 100%;
 }
+/* 캐릭터 이름이미지 박스 */
+.ci span {
+  /* 블록으로 변경 */
+  display: block;
+  /* 인라인요소 중앙정렬 */
+  text-align: center;
+  /* 상단마진 - 마이너스값을 주면 윗방향으로 겹쳐짐 */
+  margin-top: -15%;
+}
+/* 이름 이미지 사이즈 조정 */
+.ci span img {
+  width: 32%;
+}
+/* 이름이미지 중 첫번째 진한 이미지 숨기기 */
+/* 가상 클래스로 첫번째 이미지 선택 */
+/* :first-child */
+.ci span img:first-child {
+  display: none;
+}
+/* .cat 마우스 오버시 첫번째 이름이미지 보이기*/
+.cat:hover .ci span img:first-child {
+  /* 원래의 display로 복귀 */
+  display: inline;
+}
+/* .cat에 마우스 오버시 마지막째 이름이미지 숨기기 */
+.cat:hover .ci span img:last-child {
+  display: none;
+}
+/* 캐릭터 설명박스 */
+.cd {
+  background: url(../images/eachBG.jpg) no-repeat center/cover;
+}
 
+/* 캐릭터 설명 타이틀 */
+.cd h3 {
+  font-family: "Yeon Sung", cursive;
+  font-size: 26px;
+  font-weight: normal;
+  /* 패딩 위 양쪽 아래 */
+  padding: 5px 10px 0;
+}
+
+/* 캐릭터 설명 문단 */
+.cd p {
+  font-family: "Gowun Batang", serif;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.6;
+  text-align: justify;
+}
