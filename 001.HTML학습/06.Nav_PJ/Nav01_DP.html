@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>1. 가로네비 서브별 드롭다운 세로형</title>
+    <title>1. 가로네비 서브별 드롭다운 세로형 (디피형)</title>
     <style>
       * {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -66,27 +66,15 @@
       }
       /* 서브메뉴 */
       .smenu {
-        /* 서브메뉴 숨김장치
-        -> 높이값0 + 넘치는 자식요소 숨기기
-        (주의 사항) 위아래방향 패딩 없어야함*/
-        height: 0;
-        overflow: hidden;
-        /*padding: 10px;*/
+        display: none;
         background-color: rgb(22, 184, 184);
-        transition: height ease-in-out 0.4s;
-        border-radius: 0 0 10px 10px;
       }
       /* 상위메뉴 li에 마우스 오버시
-      하위메뉴박스 높이값 복원하기(트랜지션)*/
+      하위메뉴박스 보이기*/
 
-      .gnb > ul > li:hover:nth-child(2) .smenu {
-        height: 180px;
+      .gnb > ul > li:hover .smenu {
+        display: block;
       }
-
-      .gnb > ul > li:hover:nth-child(3) .smenu {
-        height: 100px;
-      }
-      /* */
 
       /*서브 메뉴  ol 요소*/
       .smenu ol {
@@ -122,7 +110,7 @@
   </head>
 
   <body>
-    <h1>1. 가로네비 서브별 드롭다운 세로형</h1>
+    <h1>1. 가로네비 서브별 드롭다운 세로형 (디피형)</h1>
     <!-- GNB 네비게이션 -->
     <nav class="gnb">
       <ul>
