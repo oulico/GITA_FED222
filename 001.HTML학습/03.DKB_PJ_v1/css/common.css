@@ -66,6 +66,9 @@ ol {
   text-decoration: none;
 }
 /* sns 메뉴 리스트*/
+.sns {
+  margin-top: -5px;
+}
 .sns a {
   display: none;
 }
@@ -73,7 +76,6 @@ ol {
 .sns li {
   width: 30px;
   height: 30px;
-  margin-top: -5px;
 }
 /* 트위터 */
 /* 스프라이트 방식으로 이미지 사용. image replacement (ir)기법으로 웹접근성을 살려라 */
@@ -112,7 +114,7 @@ ol {
 /* ul 초기화 */
 .gnb ul {
   /* 가로크기: li하나 200px*4= 800*/
-  width: 575px;
+  width: 573px;
   clear: both;
   /* 마영오 */
   margin: 0 auto;
@@ -156,7 +158,7 @@ ol {
 /* 부모 li에 마우스 오버시 상위메뉴 a요소 배경색 변경 */
 .gnb > ul > li:hover > a {
   border-bottom: 4px solid red;
-  padding-bottom: 6px;
+  padding-bottom: 11px;
   /* 인라인 요소의 위아래 방향 패딩과 보더는 다른 요소에 영향을 미치지 않고 디자인만 나온다 */
 }
 /* 서브메뉴 */
@@ -175,7 +177,7 @@ ol {
   background-color: white;
   transition: height ease-in-out 0.4s;
   border-radius: 0 0 10px 10px;
-  margin-top: -1px;
+  margin-top: 4px;
 }
 /* 상위메뉴 li에 마우스 오버시
       하위메뉴박스 높이값 복원하기(트랜지션)*/
@@ -227,4 +229,41 @@ ol {
 /***************** 2. 하단영역 *************/
 .info {
   height: 241px;
+}
+
+#info {
+  /* 높이값 */
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* 3-1 하단추가정보링크 */
+
+.blink ul {
+  width: 804px;
+  margin: 0 auto;
+}
+.blink li {
+  float: left;
+  padding: 0 15px;
+}
+/* 하단링크 a 요소 */
+.blink a {
+  color: #222;
+  /* 밑줄없앰 */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 2.8;
+}
+/* 마우스 오버시 a요소 */
+.blink a:hover {
+  color: red;
+  text-decoration: underline;
+}
+/* 브랜드 바로가기 */
+.brand select {
+  /* 글자두껍게 */
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 2.8;
 }

@@ -252,8 +252,31 @@
     </div>
 
     <!-- 3.하단영역 -->
-    <div>
-      <footer class="inbox info"></footer>
+    <div id="info">
+      <footer class="inbox info">
+        <div class="blink">
+          <ul class="clb">
+            <li><a href="#">법적고지</a></li>
+            <li><a href="#">영상정보처리기기운영/관리방침</a></li>
+            <li><a href="#">이메일무단수집거부</a></li>
+            <li><a href="#">사이버감사실</a></li>
+            <li><a href="#">찾아오시는길</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+          </ul>
+        </div>
+        <div class="brand">
+          <select name="sel" id="sel">
+            <option value="init"></option>
+            <option value="tvn">tvN</option>
+            <option value="ocn">OCN</option>
+            <option value="mnet">MNET</option>
+          </select>
+          <!-- select 요소 : 지정된 값을 선택하는 입력 요소
+          - 하위 필수 요소 -> option 요소 : 각 선택항목
+          -> 유의사항 : 값을 선택할 경우 option의 value 속성값을 JS등에서 읽어간다
+          그런데 value를 안쓸 수도 있는데 안쓰게 되면 꺽쇠 사이에 있는 데이터(스트링, 숫자 등등) 읽어간다 -->
+        </div>
+      </footer>
     </div>
   </body>
 </html>
