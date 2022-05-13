@@ -88,7 +88,7 @@ body {
 /* 캐릭터 박스(.cat)에 마우스 오버시 이미지박스(.ci)위로 이동하기 */
 .cat:hover .ci {
   /* 마진탑값이 마이너스면 위쪽으로 올라간다 */
-  margin-top: -137px;
+  margin-top: -57%;
 }
 
 .ci > img {
@@ -124,7 +124,8 @@ body {
 }
 /* 캐릭터 설명박스 */
 .cd {
-  margin-top: 15px;
+  /* 상단마진- 이미지 비율에 맞게 %로 설정 */
+  margin-top: 2%;
   height: 0; /* 마우스 오버시에 250px; */
   background: url(../images/eachBG.jpg) no-repeat center/cover;
   /* x축 스크롤바 트랙없는 y축 스크롤 설정 */
@@ -137,6 +138,7 @@ body {
   /* 둥근 모서리 왼쪽위부터 시계방향*/
   border-radius: 20px 5px 5px 20px;
 }
+
 /* 마우스 오버시에 250px */
 .cat:hover .cd {
   height: 250px;

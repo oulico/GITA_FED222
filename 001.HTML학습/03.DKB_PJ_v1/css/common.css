@@ -237,7 +237,10 @@ ol {
 }
 
 /* 3-1 하단추가정보링크 */
-
+.blink {
+  /* 안쪽 박스 상단을 패딩 탑으로 밀기 */
+  padding-top: 5px;
+}
 .blink ul {
   width: 804px;
   margin: 0 auto;
@@ -260,10 +263,21 @@ ol {
   color: red;
   text-decoration: underline;
 }
-/* 브랜드 바로가기 */
+/* 3-2 브랜드 바로가기 */
 .brand select {
+  /* 블록변경 - 마진탑을 마이너스로 올릴때 
+  인라인 블록이어서 인라인 특성상 
+  상단의 링크메뉴 글자부분에서 걸리게 됨.
+  따라서 이런제한이 없는 블록 박스로 변경함 */
+  display: block;
+
+  /* 오른쪽으로 보냄 */
+  float: right;
   /* 글자두껍게 */
   font-weight: bold;
+  margin-top: -35px;
   font-size: 14px;
   line-height: 2.8;
+  color: #222;
+  padding: 3px;
 }
