@@ -2,6 +2,10 @@
 /* 도깨비 공통 디자인 css - common.css */
 /* 상단영역, 하단영역 등 공통디자인 */
 
+/* 공통글씨체 : 나눔고딕 */
+body {
+  font-family: "Nanum Gothic", sans-serif;
+}
 /***************** 1. 상단영역 *************/
 .top {
   height: 127px;
@@ -10,6 +14,7 @@
 /* 전체 겉박스 */
 #top {
   background-color: white;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.442);
 }
 
 /* 1-1 메인로고 */
@@ -21,20 +26,94 @@
 /* 로고이미지 */
 #logo img {
   width: 100px;
+  vertical-align: bottom;
+  /* 버티컬 얼라인을 주지 않으면, a 요소나 div요소로 이미지를 싸면 하단에 4px의 공간이 생긴다. */
 }
 ul,
 ol {
   /* 리스트 박스 기본 3무  - 마진 패딩 리스트 스타일 없음*/
   list-style: none;
 }
+
 .gnb {
   /* background-color: rgb(45, 93, 77); */
 }
+/* 1-2. 탑메뉴  */
+
+/* 내용 리스트박스 */
+.tmenu ul {
+  /* 옆으로 흐르게 */
+  float: right;
+  /* 마진탑으로 위로 올림 */
+  /* 부모 박스의 높이값은 0이됨. 왜? 빠져나갔으니까. */
+  margin-top: -50px;
+}
+
+.tmenu li {
+  float: left;
+}
+/* 탑메뉴 상위 li */
+.tmenu > ul > li {
+  padding: 0 15px;
+}
+/* 탑메뉴 상위 a요소 */
+.tmenu > ul > li > a {
+  /*  글자크기   */
+  font-size: 15px;
+  /* 글자색 */
+  color: #000;
+  /* 밑줄없앰  */
+  text-decoration: none;
+}
+/* sns 메뉴 리스트*/
+.sns a {
+  display: none;
+}
+
+.sns li {
+  width: 30px;
+  height: 30px;
+  margin-top: -5px;
+}
+/* 트위터 */
+/* 스프라이트 방식으로 이미지 사용. image replacement (ir)기법으로 웹접근성을 살려라 */
+.sns a {
+  /* 블록변경 - 디자인적용  */
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.sns li {
+  background: url(../images/icons.png) no-repeat;
+  width: 30px;
+  height: 30px;
+}
+.sns li:first-child {
+  background-position: 0 0;
+}
+.sns li:first-child:hover {
+  background-position: 0 -30px;
+}
+.sns li:nth-child(2) {
+  background-position: -30px 0;
+}
+.sns li:nth-child(2):hover {
+  background-position: -30px -30px;
+}
+.sns li:nth-child(3) {
+  background-position: -60px 0;
+}
+.sns li:nth-child(3):hover {
+  background-position: -60px -30px;
+}
+
+/* 1-3.  */
+
 /* ul 초기화 */
 .gnb ul {
   /* 가로크기: li하나 200px*4= 800*/
-  width: 606px;
-
+  width: 575px;
+  clear: both;
   /* 마영오 */
   margin: 0 auto;
 }
@@ -44,6 +123,7 @@ ol {
   display: block;
   clear: both;
 }
+
 /* li 리스트 요소*/
 .gnb > ul > li {
   /* 블록요소 옆으로 흐르게*/
@@ -51,6 +131,12 @@ ol {
   height: 44px;
   padding: 0 15px; /* 양쪽 패딩*/
 }
+/* 세번째 요소 li 요소 가로크기 주기 */
+.gnb > ul > li:nth-child(3),
+.gnb > ul > li:nth-child(4) {
+  width: 50px;
+}
+
 /* li 하위 a요소 */
 .gnb > ul > li > a {
   /* 글자색 변경*/
@@ -63,19 +149,25 @@ ol {
   /* text-align: center; */
   line-height: 44px;
   /* 트랜지션: 속시이지 */
-  transition: all 0.3s;
+  /* transition: all 0.3s; */
   /* 글자크기 */
   font-size: 17px;
 }
 /* 부모 li에 마우스 오버시 상위메뉴 a요소 배경색 변경 */
 .gnb > ul > li:hover > a {
-  /* background-color: rgb(22, 184, 184);
-  color: #000; */
+  border-bottom: 4px solid red;
+  padding-bottom: 6px;
+  /* 인라인 요소의 위아래 방향 패딩과 보더는 다른 요소에 영향을 미치지 않고 디자인만 나온다 */
 }
 /* 서브메뉴 */
 .smenu {
+  /* 가로크기 설정 - 부모 박스 크기에 영향없도록 */
+  width: 88px;
+  /* 노랩박스만들기 - 공백 속성 싸지마 좁아도 글자 안떨어짐 */
+  white-space: nowrap;
+
   /* 서브메뉴 숨김장치
-        -> 높이값0 + 넘치는 자식요소 숨기기
+        -> 높이값0 + 넘치는 자식요소 숨기다
         (주의 사항) 위아래방향 패딩 없어야함*/
   height: 0;
   overflow: hidden;
@@ -83,38 +175,39 @@ ol {
   background-color: white;
   transition: height ease-in-out 0.4s;
   border-radius: 0 0 10px 10px;
+  margin-top: -1px;
 }
 /* 상위메뉴 li에 마우스 오버시
       하위메뉴박스 높이값 복원하기(트랜지션)*/
 /* 1번째 메뉴 - 3개 */
 .gnb > ul > li:hover:nth-child(1) .smenu {
-  height: 132px;
+  height: 120px;
 }
 
 /* 3번째 메뉴 - 4개 */
 .gnb > ul > li:hover:nth-child(3) .smenu {
-  height: 176px;
+  height: 160px;
 }
 
 /* 4번째 메뉴 - 2개 */
 .gnb > ul > li:hover:nth-child(4) .smenu {
-  height: 88px;
+  height: 80px;
 }
 /* */
 
-/*서브 메뉴  ol 요소*/
-.smenu ol {
-  padding: 10px;
-  /*.smenu 박스는 높이 값을 0으로 자식 요소 숨기기를 할 박스이므로
+/* 서브 메뉴  ol 요소 - 디자인상 없앰 */
+/* .smenu ol { */
+/* padding: 10px; */
+/*.smenu 박스는 높이 값을 0으로 자식 요소 숨기기를 할 박스이므로
         패딩이 있으면 높이값 0이어도 패딩때문에 숨겨지지 않는다.
          따라서 안쪽 박스에 패딩 설정을 해야한다.*/
-}
+/* } */
 /* 서브메뉴 a 요소 */
 .smenu a {
   color: #000;
   text-decoration: none;
   display: block;
-  text-align: center;
+  /* text-align: center; */
   font-size: 14px;
   line-height: 40px;
   transition: height 0.4s ease-in;

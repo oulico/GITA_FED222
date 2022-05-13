@@ -2,7 +2,7 @@
 /* 도깨비 공통 클래스 css - core.css */
 /* 공통 클래스, 웹폰트 등 구현 */
 /* CDN font */
-@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Noto+Sans+TC&family=Yeon+Sung&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Gowun+Batang&family=Noto+Sans+TC&family=Yeon+Sung&display=swap");
 
 /* 
 설명타이틀
@@ -13,6 +13,9 @@ font-family: 'Gowun Batang', serif;
 
 한자
 font-family: 'Noto Sans TC', sans-serif;
+
+상단, 하단 글자
+font-family: 'Nanum Gothic', sans-serif;
 */
 
 /* 스크롤바 디자인 클래스 */
@@ -42,3 +45,20 @@ font-family: 'Noto Sans TC', sans-serif;
   /* 마진에 의한 블록 박스 중앙정렬 -> 마영오!  */
   margin: 0 auto;
 }
+
+/* 가상요소로 float해제 셋팅 클래스 */
+.clb::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+/* IR(image replacement) 배경이미지 설명 숨기기 클래스  */
+.ir {
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+/* ir기법 사용시 주의사항 */
+/* display none 스크린 리더기가 못읽음   */
