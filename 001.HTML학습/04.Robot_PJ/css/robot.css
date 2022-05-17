@@ -9,4 +9,188 @@ body {
 
 body {
   background: url(../images/bg.jpg) no-repeat fixed top/cover;
+  padding-top: 100px;
+  height: 1000px;
+}
+/* 공사중표시 */
+body * {
+  outline: 2px dashed lime;
+}
+/* 로봇머리 */
+#head {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  /* 마영오 블록중앙*/
+  margin: 0 auto;
+  background: url(../images/metal01.jpg) no-repeat center/cover;
+  border-radius: 30px 30px 10px 10px;
+}
+/* 눈공통 */
+.eye {
+  position: absolute;
+  top: 50px;
+
+  /* 나의 부모는? #head */
+  width: 45px;
+  height: 45px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 50%;
+  background-color: white;
+  border: 5px double black;
+}
+
+/* 눈 1 */
+#eye1 {
+  /* 나의 부모는? #head */
+  left: 50px;
+  background-image: url(../images/e1.jpg);
+}
+
+/* 눈 2 */
+#eye2 {
+  left: 150px;
+  background-image: url(../images/e2.jpg);
+}
+
+#nose {
+  position: absolute;
+  right: 100px;
+  top: 102px;
+  width: 50px;
+  height: 75px;
+  background: url(../images/nose.jpg) no-repeat 0/110% 100%;
+  border-radius: 30px;
+}
+
+#mouth {
+  position: absolute;
+  top: 188px;
+  left: 77px;
+  width: 100px;
+  height: 50px;
+  background: url(../images/mouth.png) no-repeat 0/100% 100%;
+}
+/* 귀공통 */
+.ear {
+  position: absolute;
+  width: 50px;
+  top: 70px;
+  height: 60px;
+  background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
+}
+
+#ear1 {
+  left: -50px;
+  border-radius: 30px 0 0 30px;
+}
+#ear2 {
+  right: -50px;
+  border-radius: 0 30px 30px 0;
+}
+
+#ear1 {
+  left: -50px;
+}
+#ear2 {
+  right: -50px;
+}
+/* 로봇 몸 */
+#body {
+  position: relative;
+  margin-bottom: 600px;
+  width: 250px;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+  background: url(../images/metal01.jpg) no-repeat center/cover;
+}
+#neck {
+  position: absolute;
+  top: -49px;
+  left: 95px;
+  width: 60px;
+  height: 50px;
+  background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
+}
+/* 팔공통 */
+
+.arm {
+  position: absolute;
+  top: 20px;
+  width: 50px;
+  height: 240px;
+  background: url(../images/metal02.jpg) repeat-y 0/100%;
+}
+/* 팔1 */
+#arm1 {
+  left: -60px;
+  border-radius: 20px 0 0 0;
+}
+/* 팔2 */
+#arm2 {
+  right: -60px;
+  border-radius: 0 20px 0 0;
+}
+
+/* 가상요소로 집게손 만들기 */
+
+.arm::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -70px;
+  left: -20px;
+  /*  부모는 .arm */
+  width: 80px;
+  height: 80px;
+  border: 3px solid rgb(99, 96, 96);
+  border-radius: 50%;
+  background-color: #ccc;
+  box-sizing: border-box;
+}
+.arm::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -70px;
+  left: 15px;
+  width: 10px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgb(103, 103, 103);
+  /* 개별 설정을 개별적으로 넣어라! 그냥  background를 쓰면, 다른 백그라운드를 다 덮어버림 */
+}
+
+/* 다리공통 */
+
+.leg {
+  position: absolute;
+  top: 100%;
+  z-index: -1;
+  width: 80px;
+  height: 300px;
+  background: url(../images/metal02.jpg) repeat-y 0/100%;
+}
+
+#leg1 {
+  left: 0;
+}
+
+#leg2 {
+  right: 0;
+}
+.leg::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -5px;
+  bottom: -10px;
+  width: 90px;
+  height: 60px;
+  border: 2px solid #555;
+  border-radius: 40px 40px 0 0;
+  background-color: #ccc;
+  box-sizing: border-box;
 }
