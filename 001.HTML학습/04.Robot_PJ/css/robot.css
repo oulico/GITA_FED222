@@ -194,3 +194,23 @@ body * {
   background-color: #ccc;
   box-sizing: border-box;
 }
+
+.sh {
+  position: absolute;
+  top: -10px;
+  width: 80px;
+  height: 80px;
+  background: url(../images/metal01.jpg) no-repeat center/cover;
+}
+
+/* 어깨 1  */
+#sh1 {
+  border-radius: 50% 5px 5px 50%;
+  left: -80px;
+}
+
+/* 어깨 2  */
+#sh2 {
+  border-radius: 5px 50% 50% 5px;
+  right: -80px;
+}
