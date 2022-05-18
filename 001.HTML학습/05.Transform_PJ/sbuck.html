@@ -1,23 +1,68 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>스타벅스 연습</title>
     <style>
-        body{
-            background: #000 url(./starbucks_img/reserve_bg.jpg) no-repeat top/100%;
-        }
+      body {
+        background: #000 url(./starbucks_img/reserve_bg.jpg) no-repeat top/100%;
+      }
 
-        
+      /*기본박스*/
+      #trans10 {
+        width: 334px;
+        height: 334px;
 
+        /* 가로중앙정렬 */
+        margin: 100px auto;
+      }
+      /* 2개의 이미지를 겹치게한다 */
+
+      #trans10 img {
+        position: absolute;
+        /*위치값을 주지않으면 젠틀 앱솔루트! 싸고 있는 박스에 그대로 위치한다.*/
+        /*width: 100%;*/
+        /*%크기 값을 주면 부모찾아 삼만리-> 부모 없으니까 보이는 화면이 부모가 됨
+          그러니 절대적인 값을 주는게 낫다*/
+      }
+
+      /* 1. 보거미 처음상태(돌아옴) */
+      /* Y축 0도로 돌아옴 - 0.4초 기다림 */
+      #trans10 img:last-child {
+        transform: rotateY(0deg);
+        transition: transform 0.4s ease-out 0.4s;
+      }
+
+      /* 2. 보거미 오버상태 */
+      /* Y축 90도회전 - 회전후 안보임*/
+      #trans10:hover img:last-child {
+        transform: rotateY(90deg);
+        transition: transform 0.4s ease-in;
+      }
+
+      /* 3. 유정이 처음상태(돌아옴) */
+      /* 처음에 이미 Y축 90도 회전상태 - 안보임 */
+      #trans10 img:first-child {
+        transform: rotateY(90deg);
+        transition: transform 0.4s ease-in;
+      }
+
+      /* 4. 유정이 오버상태 */
+      /* Y축 0도로 회전
+               - 보거미 0.4초 돌동안 기다렸가 0.4초돌기 */
+      #trans10:hover img:first-child {
+        transform: rotateY(0deg);
+        transition: transform 0.4s ease-out 0.4s;
+        /* ease-out 정속도를 받아 끝날 때 느려진다 */
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
-    
-</body>
-
+  <body>
+    <div id="trans10">
+      <img src="./starbucks_img/reserve_medal02.png" alt="매장안내" />
+      <img src="./starbucks_img/reserve_medal01.png" alt="스타벅스로고" />
+    </div>
+  </body>
 </html>

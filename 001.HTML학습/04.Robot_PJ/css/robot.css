@@ -215,3 +215,37 @@ body {
   border-radius: 5px 50% 50% 5px;
   right: -80px;
 }
+
+/* TV */
+#tv {
+  position: absolute;
+  top: 75px;
+  left: 25px;
+
+  width: 200px;
+  height: 150px;
+  background: url(../images/tv.jpg) no-repeat 0/100% 100%;
+}
+/* 스크린 */
+#screen {
+  position: absolute;
+  top: 17px;
+  left: 12px;
+  width: 140px;
+  height: 105px; /* 부모는 #tv */
+  background-color: black;
+  border-radius: 18px;
+  /* 넘치는 자식요소 숨기기 */
+  overflow: hidden;
+}
+/* 유튜브 아이프레임 */
+#screen iframe {
+  position: absolute;
+  top: 1px;
+  left: -19px;
+  /* 부모는 #screen */
+  width: 130%;
+  height: 100%;
+  /* 아이프레임 기본 보더 없앰 */
+  border: none;
+}
