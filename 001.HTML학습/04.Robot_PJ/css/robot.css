@@ -190,11 +190,25 @@ animation: 이시이지반방마
   top: 100px;
   right: 50px;
   /* 부모는 보이는 화면 */
+}
+
+/* 투명요소 보이게 키프레임 호출 클래스 */
+.opaAni {
   /* 처음에 안보임 */
   opacity: 0;
+
   animation: opaAni 1s 5s forwards;
 }
 
+.opaAni.delay1 {
+  animation-delay: 5s;
+}
+.opaAni.delay2 {
+  animation-delay: 6s;
+}
+.opaAni.delay3 {
+  animation-delay: 7s;
+}
 /* 투명요소 보이게 애니 키프레임 */
 @keyframes opaAni {
   10% {
@@ -283,7 +297,11 @@ animation: 이시이지반방마
   border-radius: 30px 30px 10px 10px;
   box-shadow: 0 0 10px 5px cyan;
 }
-
+/* 머리는 애니 딜레이 더줌 */
+/* backAni클래스에만 적용되는 .delay1  */
+.backAni.delay1 {
+  animation-delay: 4s;
+}
 /* 로봇애니 호출 클래스 : 로봇 머리, 몸 제자리 */
 .backAni {
   /* 애니메이션: 이시이지반방마 */
@@ -416,6 +434,27 @@ animation: 이시이지반방마
 #arm2 {
   right: -60px;
   border-radius: 0 20px 0 0;
+  /* 트랜스폼 기준 축 변경: 상단  */
+  transform-origin: top;
+  animation: 
+  /* 팔올리기 애니 호출 */ riseAni 0.6s ease-out 7s forwards,
+    /* 팔흔들기 애니 호출 */ shakeAni 0.4s ease-in-out 7.6s infinite alternate;
+}
+/* 팔올리기 애니 키프레임 */
+@keyframes riseAni {
+  to {
+    transform: rotate(-160deg);
+  }
+}
+
+/* 팔 흔들기 애니 키프레임 */
+@keyframes shakeAni {
+  from {
+    transform: rotate(-160deg);
+  }
+  to {
+    transform: rotate(-140deg);
+  }
 }
 
 /* 가상요소로 집게손 만들기 */
