@@ -8,11 +8,16 @@
     <meta charset="UTF-8" />
     <!-- 반드시 2바이트 문자처리에 대한 인코딩속성 세팅을 해야한다. utf-8 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>쓸쓸하고 찬란하신(신)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쓸쓸하고 찬란하신(신) 도깨비</title>
     <link rel="stylesheet" href="./css/main.css" />
     <!-- 외부 css하나만 불러도 main.css에서 import하고 있는 3개의 기본 CSS가 같이 들어옴 -->
     <link rel="stylesheet" href="./css/media.css" />
     <!-- 미디어 쿼리 css 외부 파일은 반드시 기존 css 파일 아래쪽에 호출해야 덮어씀 -->
+    <script
+      src="https://kit.fontawesome.com/5c402abd12.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body class="scbar">
@@ -94,6 +99,8 @@
             </li>
           </ul>
         </nav>
+        <!-- 모바일용 햄버거버튼 : 햄버거 모양 -->
+        <button class="ham"><i class="fa-solid fa-bars fa-xl"></i></button>
       </header>
     </div>
     <!-- 2.메인영역 -->
@@ -250,6 +257,8 @@
             </div>
           </div>
         </div>
+        <!-- 드라마 문구 이미지 -->
+        <img id="dtxt" src="images/dkb_main.png" alt="도깨비문구" />
       </main>
     </div>
 

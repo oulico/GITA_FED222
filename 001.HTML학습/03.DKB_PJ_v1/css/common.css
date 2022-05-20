@@ -10,9 +10,24 @@ body {
 .top {
   height: 127px;
 }
+.ham {
+  /* 모바일용 햄버거 버튼 */
+  position: absolute;
+  top: 30px;
+  right: 20px;
 
+  /* 버튼 기본 디자인 없애기   */
+  background-color: transparent;
+  border: none;
+
+  /* 모바일 아닐때 안보임 */
+  display: none;
+}
 /* 전체 겉박스 */
 #top {
+  position: relative;
+  z-index: 999;
+  /* position이 static이 아니어아 z-index가 적용됨. */
   background-color: white;
   border-bottom: 2px solid rgba(128, 128, 128, 0.442);
 }
@@ -67,7 +82,7 @@ ol {
 /* 탑메뉴 상위 a요소 */
 .tmenu > ul > li > a {
   /*  글자크기   */
-  font-size: 15px;
+  font-size: 1.5rem;
   /* 글자색 */
   color: #000;
   /* 밑줄없앰  */
@@ -198,13 +213,13 @@ ol {
   /* 디자인 적용위해 블록변경 */
   /* display: block; */
   /* width: 200px; */
-  height: 50px;
+  height: 0.5rem;
   /* text-align: center; */
-  line-height: 44px;
+  line-height: 4.4rem;
   /* 트랜지션: 속시이지 */
   /* transition: all 0.3s; */
   /* 글자크기 */
-  font-size: 17px;
+  font-size: 1.7rem;
 }
 /* 부모 li에 마우스 오버시 상위메뉴 a요소 배경색 변경 */
 .gnb > ul > li:hover > a {
@@ -265,8 +280,8 @@ ol {
   text-decoration: none;
   display: block;
   /* text-align: center; */
-  font-size: 14px;
-  line-height: 40px;
+  font-size: 1.4rem;
+  line-height: 4rem;
   transition: height 0.4s ease-in;
 }
 
@@ -310,7 +325,7 @@ ol {
   /* 밑줄없앰 */
   text-decoration: none;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 2.8;
 }
 /* 마우스 오버시 a요소 */
@@ -338,25 +353,25 @@ ol {
   /* 글자두껍게 */
   font-weight: bold;
   /* margin-top: -35px; */
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 2.8;
   color: #222;
-  padding: 3px;
+  padding: 0.3rem;
 }
 /* 3-3. 회사주소 박스 */
 .addr {
-  padding: 10px;
+  padding: 1rem;
 }
 .addr address {
   max-width: 804px;
   margin: 0 auto;
   border: 4px double #222;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 2;
   text-align: center;
   /* address 기본 이탤릭체 해제 */
   font-style: normal;
-  padding: 10px;
+  padding: 1rem;
   /* 박스크기 유지 */
   box-sizing: border-box;
 }
