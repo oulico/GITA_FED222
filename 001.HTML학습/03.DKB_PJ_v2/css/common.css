@@ -13,7 +13,7 @@ body {
 .ham {
   /* 모바일용 햄버거 버튼 */
   position: absolute;
-  top: 10px;
+  top: 18px;
   right: 20px;
 
   font-size: 40px;

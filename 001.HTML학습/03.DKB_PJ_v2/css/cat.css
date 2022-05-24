@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* 도깨비 서브 페이지 CSS - temp.css */
+
+/* 공통 사용 외부 css 파일 합치기(merging) */
+@import url(./reset.css);
+@import url(./core.css);
+@import url(./common.css);
+
+#cont {
+  background-color: #c9c9c9;
+}
+.cont {
+  text-align: center;
+  height: auto;
+  padding: 0 !important;
+}
+
+.cont img {
+  max-width: 100%;
+  /* 최대 100%는 부모가 자기 가로 크기보다 작아지면 100%로 크기에 맞춰준다. */
+}

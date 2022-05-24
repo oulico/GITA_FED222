@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* 도깨비 공통 클래스 css - core.css */
+/* 공통 클래스, 웹폰트 등 구현 */
+/* CDN font */
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Gowun+Batang&family=Noto+Sans+TC&family=Yeon+Sung&display=swap");
+
+/* 
+설명타이틀
+font-family: 'Yeon Sung', cursive;
+
+설명내용
+font-family: 'Gowun Batang', serif;
+
+한자
+font-family: 'Noto Sans TC', sans-serif;
+
+상단, 하단 글자
+font-family: 'Nanum Gothic', sans-serif;
+*/
+
+/* 스크롤바 디자인 클래스 */
+/* -webkit- 벤더사 이름(크롬, 사파리) 접두어 
+(참고: -ms-(ie), -o-(오페라), -moz-(파이어폭스)*/
+.scbar::-webkit-scrollbar {
+  /* 전체 스크롤바 크기 변경 */
+  width: 7px;
+}
+.scbar::-webkit-scrollbar-thumb {
+  background-color: rgb(4, 50, 94);
+  border-right: 5px rgb(24, 78, 97);
+}
+
+.scbar::-webkit-scrollbar-track {
+  background-color: lightblue;
+  border-right: 5px;
+}
+/*  중앙 속박스 */
+.inbox {
+  /* 가로크기를 고정하면 작은 화면에선 가로 스크롤 생김*/
+  /* width: 1200px; ->안씀 */
+  /* 최대가로크기를 사용하여 크기가 작을때 auto로 전환됨 */
+  max-width: 1200px;
+  /* 1200px 최대 크기를 유지하다가 이것보다 작아지면 기본설정인 auto로 줄어듬 */
+
+  /* 마진에 의한 블록 박스 중앙정렬 -> 마영오!  */
+  margin: 0 auto;
+}
+
+/* 가상요소로 float해제 셋팅 클래스 */
+.clb::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+/* IR(image replacement) 배경이미지 설명 숨기기 클래스  */
+.ir {
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+/* ir기법 사용시 주의사항 */
+/* display none 스크린 리더기가 못읽음   */
