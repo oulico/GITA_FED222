@@ -13,7 +13,7 @@ body {
 .ham {
   /* 모바일용 햄버거 버튼 */
   position: absolute;
-  top: 18px;
+  top: 11px;
   right: 20px;
 
   font-size: 40px;
@@ -21,7 +21,6 @@ body {
   /* 버튼 기본 디자인 없애기   */
   background-color: transparent;
   border: none;
-  transform: scale(1.5);
   background-color: transparent;
   border: none;
 
