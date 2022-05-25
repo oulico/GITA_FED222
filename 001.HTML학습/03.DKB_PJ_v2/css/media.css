@@ -28,6 +28,9 @@
     /* 32*3 */
   }
 
+  .gnb > ul > li > a {
+    color: white;
+  }
   /* 3번째 메뉴 - 4개 */
   .gnb > ul > li:hover:nth-child(3) .smenu,
   .gnb > ul > li.m2:hover::after {
