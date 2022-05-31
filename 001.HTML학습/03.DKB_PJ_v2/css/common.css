@@ -12,6 +12,7 @@ body {
 }
 .ham {
   /* 모바일용 햄버거 버튼 */
+  z-index: 999;
   position: absolute;
   top: 11px;
   right: 20px;
