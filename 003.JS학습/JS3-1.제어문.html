@@ -300,6 +300,145 @@
       
       
       ******************/
+      /*********************************
+        함수명: gugu
+        기능: 선택박스에서 선택된 구구단을 출력함
+        연결이벤트 : change
+        -> 선택박스(select)의 option 선택이 변경될 때 발생하는 이벤트
+         
+      ***************************/
+      function gugu(U) {
+        //U는 this 키워드로 보낸 값을 받음
+        // 함수 소괄호 안의 변수를 전달변수(파라미터)라고 한다.
+        // 함수를 호출하는 곳에서 값을 보내면 이것을 받아서 함수내부에서 사용할 수 있게 전달하는 역할을 한다
+
+        //0. 전달값 읽기
+        var ov = U.value;
+        // value는 선택된 option의 value값을 의미한다.
+
+        //1. 함수호출확인
+        console.log("구구단을 외자!", ov);
+
+        //2. 대상선정:
+        var g1 = document.querySelector(".g1");
+
+        //3. 구구단 만들기
+        var code = `<h2>${ov}단</h2>`;
+
+        //기존값에 더하기 += 대입연산자 사용!
+        // 수학  기호
+        // for(시;한;증)
+        // i는 initiate (시작하다)
+        for (var i = 1; i <= 9; i++) {
+          code += `${ov} ✕ ${i} = ${ov * i} <br>`;
+        } /////// for문 ////////
+
+        //4. 화면 출력 : html코드를 innerHTML로 출력
+        // 주의 : innerText로 하면 태그가 보인다.
+        g1.innerHTML = code;
+      }
+
+      /**************************************************
+
+         [for문]
+
+       ((구문구조))
+      for(시;한;증){실행코드}
+
+      - 시: 시작값(변수선언과 함께 숫자를 할당)
+      - 한: 한계값(숫자를 조건문으로 사용)
+      - 증: 증감(1씩 증가 ++ / 1씩 감소 --)
+      _________________________________
+
+      [for문 진행순서]
+      1. 먼저 시작값을 변수에 선언 후 할당함
+      2. 중앙에 있는 한계값 조건에 맞는지 검사함
+      3. 맞으면 for문의 중괄호{}안의 코드실행
+      4. 중괄호안의 코드를 실행 후 세번째 증감으로 감
+        ++ / -- 로 1씩 증감함
+      5. 중앙에 있는 한계값 조건에 맞는지 검사함
+      6. 조건에 맞는동안 중괄호 안의 코드를 실행함
+      7. 중앙의 한계값 조건에 맞지 않으면(false)
+        for문을 빠져나온다!
+
+      **************************************************/
+      /*********************************
+        함수명: gugu2
+        기능: 선택박스에서 선택된 구구단을 출력함(while문 사용)
+        연결이벤트 : change
+        -> 선택박스(select)의 option 선택이 변경될 때 발생하는 이벤트
+         
+      ***************************/
+      function gugu2(U) {
+        //U는 this 키워드로 보낸 값을 받음
+        // 함수 소괄호 안의 변수를 전달변수(파라미터)라고 한다.
+        // 함수를 호출하는 곳에서 값을 보내면 이것을 받아서 함수내부에서 사용할 수 있게 전달하는 역할을 한다
+
+        //0. 전달값 읽기
+        var ov = U.value;
+        // value는 선택된 option의 value값을 의미한다.
+
+        //1. 함수호출확인
+        console.log("구구단을 외자!", ov);
+
+        //2. 대상선정:
+        var g2 = document.querySelector(".g2");
+
+        //3. 구구단 만들기
+        var code = `<h2>${ov}단</h2>`;
+
+        //기존값에 더하기 += 대입연산자 사용!
+
+        //시작값;
+        //while(한계조건){코드}
+
+        // 시작값
+        var i = 1;
+        while (i <= 9) {
+          // 소괄호안이 한계값(조건)
+          // 실행코드
+          code += `${ov} ✕ ${i} = ${ov * i} <br>`;
+          // 증감
+          i++;
+        } /////// for문 ////////
+
+        //4. 화면 출력 : html코드를 innerHTML로 출력
+        // 주의 : innerText로 하면 태그가 보인다.
+        g2.innerHTML = code;
+      }
+      ///////////////////////////////////////////
+
+      //gugu2 함수
+      ////////////////////////////////////////////
+      /******************************************************
+      [while문]
+      - 반복 실행 코드를 위한 조건으로 만드는 제어문
+
+      ((구문구조))
+      ______________________________________-
+      시작값;
+
+      while(한계값){
+        실행코드;
+        증감;
+
+      }
+
+      ________________________________________
+      ((구문해석))
+      - for문과 유사하나 시작값이 while문 윗쪽에 나옴.
+      - 한계값은 while문 소괄호 안에 씀.
+      - 증감은 while문 실행코드 내부에 쓴다.
+      (주의: 증감을 안쓰면 무한 루프에 빠진다. )
+
+      -> while문은 for문과 무엇이 다른가?
+
+      시작값과 증감없이 단지 조건에 의해서 반복실행이 필요한 경우 
+      사용할 수 있다.
+      while(조건){코드}
+
+      -> 예) 중복 숫자 피하기, 직전값 피하기 등
+      ******************************************************/
     </script>
     <style>
       /* 칭찬스티커 */
@@ -322,6 +461,16 @@
         width: 0;
         height: 0;
         overflow: hidden;
+      }
+      /* 구구단 출력박스 */
+      .gugu {
+        width: 300px;
+        height: 300px;
+        border: 2px dashed blue;
+        text-align: center;
+        margin-top: 10px;
+        /* 박스의 y축 스크롤 생성*/
+        overflow-y: scroll;
       }
     </style>
   </head>
@@ -368,5 +517,73 @@
       onkeypress="if(event.keyCode===13)local()"
     />
     <button class="sbtn" onclick="local()">국번문의</button>
+    <br /><br />
+    <hr />
+
+    <!-- for 문연습 -->
+    <h2>for 문 연습</h2>
+    <h3>구구단 출력하기</h3>
+    <select name="sel" id="sel" onchange="gugu(this)">
+      <!-- this 키워드: select 박스 자신의 정보를 보냄  -->
+      <option value="1">1단</option>
+      <option value="2">2단</option>
+      <option value="3">3단</option>
+      <option value="4">4단</option>
+      <option value="5">5단</option>
+      <option value="6">6단</option>
+      <option value="7">7단</option>
+      <option value="8">8단</option>
+      <option value="9">9단</option>
+      <option value="10">10단</option>
+      <option value="11">11단</option>
+      <option value="12">12단</option>
+      <option value="13">13단</option>
+      <option value="14">14단</option>
+      <option value="15">15단</option>
+      <option value="16">16단</option>
+      <option value="17">17단</option>
+      <option value="18">18단</option>
+      <option value="19">19단</option>
+      <option value="20">20단</option>
+    </select>
+
+    <br />
+    <!-- 구구단 출력박스 -->
+    <div class="gugu g1"></div>
+    <br /><br />
+    <hr />
+
+    <!-- while 문연습 -->
+    <h2>while 문 연습</h2>
+    <h3>구구단 출력하기</h3>
+    <select name="sel" id="sel" onchange="gugu2(this)">
+      <!-- this 키워드: select 박스 자신의 정보를 보냄  -->
+      <option value="1">1단</option>
+      <option value="2">2단</option>
+      <option value="3">3단</option>
+      <option value="4">4단</option>
+      <option value="5">5단</option>
+      <option value="6">6단</option>
+      <option value="7">7단</option>
+      <option value="8">8단</option>
+      <option value="9">9단</option>
+      <option value="10">10단</option>
+      <option value="11">11단</option>
+      <option value="12">12단</option>
+      <option value="13">13단</option>
+      <option value="14">14단</option>
+      <option value="15">15단</option>
+      <option value="16">16단</option>
+      <option value="17">17단</option>
+      <option value="18">18단</option>
+      <option value="19">19단</option>
+      <option value="20">20단</option>
+    </select>
+
+    <br />
+    <!-- 구구단 출력박스 -->
+    <div class="gugu g2"></div>
+    <br /><br />
+    <hr />
   </body>
 </html>
