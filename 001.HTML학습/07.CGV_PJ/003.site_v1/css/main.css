@@ -35,8 +35,19 @@ h1.tit {
   text-align: center;
   line-height: 80px;
   /* 그림자를 이용한 glow효과 주기 */
-  text-shadow: 0 0 12px aquamarine;
+  text-shadow: 0 0 4px aquamarine;
+  /* 애니메이션 이시이지반방마 */
+  animation: titAni 0.5s ease-in infinite alternate;
+  /* infinite 영원히, alternate 번갈아 */
 }
+
+/* 타이틀 글로우 효과 애니메이션 키프레임 */
+@keyframes titAni {
+  to {
+    text-shadow: 0 0 12px aquamarine;
+  }
+} /* 키프레임 */
+
 /* 1-2. 전체메뉴(GNB) */
 .gnb {
   position: absolute;
@@ -157,6 +168,13 @@ h1.tit {
   width: 50px;
   position: relative;
   z-index: 1;
+  transform: rotate(20deg);
+}
+
+/* 마우스 오버시 영사기 회전 */
+
+.gnb:hover #cam img {
+  transform: rotate(0deg);
 }
 /* 빔박스 */
 .beam {
@@ -164,15 +182,37 @@ h1.tit {
   top: -16px;
   right: 8px;
   /* 부모는? #cam */
-  width: 200px;
+  width: 0px;
   height: 70px;
   background: url(../images/bim.png) no-repeat right center/auto 100%;
   /* 
   background-position: right center;
   background-size: auto 100%;
    */
-  outline: 2px dotted yellow;
+  /* outline: 2px dotted yellow; */
+  transition: width 0.3s linear;
+  /* linear 등속도 */
 }
+
+/* gnb 마우스 오버시 영사기 쏘기 */
+.gnb:hover .beam {
+  width: 200px;
+  /* 오버시에만 .5초 기다리기 */
+  transition-delay: 0.2s;
+  /* 애니메이션 이시이지반방마 */
+  animation: beamAni 0.04s linear infinite alternate;
+}
+
+/* 빔이 너울너울 */
+@keyframes beamAni {
+  from {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
 /********************* 2. 메인영역  *********************/
 .cont {
   position: relative;
@@ -199,7 +239,7 @@ h1.tit {
   position: absolute;
   bottom: 58px;
   left: 50%;
-  overflow: hidden;
+  /* overflow: hidden; .mlist ul로 이동*/
   /* 부모는? .cont */
 
   /*X축으로 내 크기의 절반왼쪽 이동 */
@@ -208,11 +248,44 @@ h1.tit {
 /* ul 플렉스 박스 */
 .mlist ul {
   display: flex;
+  /* 원근설정 */
+  perspective: 480px;
+  /* 오버플로우 히든 설정 */
+  position: relative;
 }
 /*각 li리스트 */
 .mlist ul > li {
-  margin: 0 9px;
   /* overflow: hidden; overflow: hidden은, 앱솔루트시에 .movtxt의 부모에 숨기기를 적용시켱 한다.*/
+  margin: 0 9px;
+  transition: transform 0.4s ease-in-out;
+  /* x축으로 회전 */
+  transform: rotateX(40deg);
+  /* 회전축을 하단으로 변경  */
+  transform-origin: bottom;
+  overflow: hidden;
+}
+/* li에 마우스 오버시 li 자신 x축 회전 일어남 */
+.mlist ul > li:hover {
+  transform: rotateX(0deg);
+  position: relative;
+  /* static이 아니므로 z-index가 적용된다. */
+  /* z-index: 1; 마우스를 떼면 효과가 사라져서 이상함. 일일히 중앙에서의 거리에 따라 z-index 주고 픽스함*/
+  outline: 1px solid aquamarine;
+  box-shadow: 0 0 10px aquamarine;
+}
+.mlist ul > li:first-child,
+.mlist ul > li:last-child {
+  position: relative;
+  z-index: -1;
+}
+.mlist ul > li:nth-child(2),
+.mlist ul > li:nth-child(4) {
+  position: relative;
+  z-index: 0;
+}
+.mlist ul > li:nth-child(3) {
+  position: relative;
+  z-index: 1;
 }
 
 /* 메뉴 포스터 이미지 */
