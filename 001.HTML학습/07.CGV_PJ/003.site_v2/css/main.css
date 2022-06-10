@@ -1,0 +1,424 @@
+@charset "utf-8";
+/* CGV PJ 메인 페이지 CSS - main.css */
+
+/* 외부CSS합치기 */
+@import url(reset.css);
+@import url(core.css);
+
+body {
+  background-color: #000;
+}
+
+/* 공사중표시 */
+/* body * {
+  outline: 1px dotted lime;
+} */
+
+/* 공통 클래스 */
+.ibx {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/********************* 1. 상단영역  *********************/
+.top {
+  height: 80px;
+  background: url(../images/curtain.jpg) repeat-x;
+  position: relative; /*부모 자격 - .gnb*/
+  z-index: 999;
+}
+/* 1-1. 페이지 타이틀 */
+h1.tit {
+  font-family: "Jua", sans-serif;
+  color: aquamarine;
+  font-size: 40px;
+  /* 고정사이즈로 먼저 만들고 나서, 나중에 상대사이즈로 바꾸는 것이 더 쉽다! */
+  text-align: center;
+  line-height: 80px;
+  /* 그림자를 이용한 glow효과 주기 */
+  text-shadow: 0 0 4px aquamarine;
+  /* 애니메이션 이시이지반방마 */
+  animation: titAni 0.5s ease-in infinite alternate;
+  /* infinite 영원히, alternate 번갈아 */
+}
+
+/* 타이틀 글로우 효과 애니메이션 키프레임 */
+@keyframes titAni {
+  to {
+    text-shadow: 0 0 12px aquamarine;
+  }
+} /* 키프레임 */
+
+/* 1-2. 전체메뉴(GNB) */
+.gnb {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  /* 부모는? .top */
+}
+/* gnb ul */
+.glist {
+  display: flex;
+}
+/* gnb li list */
+.glist > li {
+  position: relative;
+  /* 부모자격 - .smenu */
+  font-family: "Jua", sans-serif;
+  font-size: 20px;
+  padding: 0 10px;
+  padding-bottom: 5px;
+  /* 아래쪽 영역을 넓혀서 서브메뉴와 닿게 한다. */
+}
+
+/* gnb 서브메뉴 */
+.smenu {
+  position: absolute;
+  width: 140px;
+
+  left: 50%;
+  /* 자기크기의 절반 왼쪽이동 중앙으로 이동 */
+  transform: translate(-50%, 5px);
+
+  background: url(../images/bg_smenu.png) no-repeat center/cover;
+  padding: 3px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #fff;
+  /* 처음에 안보이고, 오버시 보임 */
+  display: none;
+}
+/* 상위메뉴 li에 오버시 하위메뉴 보임 */
+.glist > li:hover .smenu {
+  display: block;
+}
+/* 가상요소로 서브메뉴 삼각형 만들기 */
+.smenu::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* 삼각형만들기 */
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid #353535;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  /*양쪽보더는 투명색(transparent) border-top로 하면 역삼각형이 나온다*/
+}
+
+/* 서브메뉴 ol */
+.smenu ol {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+/* 서브메뉴 li */
+.smenu li {
+  font-size: 16px;
+  line-height: 2;
+}
+
+.bdt {
+  border-top: 1px solid #ccc;
+}
+.smenu a {
+  display: block;
+  /* li 부모요소 끝까지 차지함 */
+}
+.smenu a:hover {
+  color: red;
+}
+
+/* 서브메뉴 a에 오버시 가상요소로 이모지 보이기 */
+/* "영화" 하위메뉴 이모지 */
+.glist > li:nth-child(1) .smenu li a:hover::after {
+  content: "🍿";
+  float: right;
+  /* 인라인 요소를 오른쪽 끝으로 보냄 */
+}
+/* "예매" 하위메뉴 이모지 */
+.glist > li:nth-child(2) .smenu li a:hover::after {
+  content: "🎟";
+  float: right;
+  /* 인라인 요소를 오른쪽 끝으로 보냄 */
+}
+/* "극장" 하위메뉴 이모지 */
+.glist > li:nth-child(3) .smenu li a:hover::after {
+  content: "🎭";
+  float: right;
+  /* 인라인 요소를 오른쪽 끝으로 보냄 */
+}
+/* "이벤트&컬처" 하위메뉴 이모지 */
+.glist > li:nth-child(4) .smenu li a:hover::after {
+  content: "🎉";
+  float: right;
+  /* 인라인 요소를 오른쪽 끝으로 보냄 */
+}
+
+/* 영사기 박스 */
+#cam {
+  position: absolute;
+  bottom: -14px;
+  right: -51px;
+  /* 부모는? .gnb */
+}
+/* 영사기 이미지 */
+#cam img {
+  width: 50px;
+  position: relative;
+  z-index: 1;
+  transform: rotate(20deg);
+}
+
+/* 마우스 오버시 영사기 회전 */
+
+.gnb:hover #cam img {
+  transform: rotate(0deg);
+}
+/* 빔박스 */
+.beam {
+  position: absolute;
+  top: -16px;
+  right: 8px;
+  /* 부모는? #cam */
+  width: 0px;
+  height: 70px;
+  background: url(../images/bim.png) no-repeat right center/auto 100%;
+  /* 
+  background-position: right center;
+  background-size: auto 100%;
+   */
+  /* outline: 2px dotted yellow; */
+  transition: width 0.3s linear;
+  /* linear 등속도 */
+}
+
+/* gnb 마우스 오버시 영사기 쏘기 */
+.gnb:hover .beam {
+  width: 200px;
+  /* 오버시에만 .5초 기다리기 */
+  transition-delay: 0.2s;
+  /* 애니메이션 이시이지반방마 */
+  animation: beamAni 0.04s linear infinite alternate;
+}
+
+/* 빔이 너울너울 */
+@keyframes beamAni {
+  from {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+/********************* 2. 메인영역  *********************/
+.cont {
+  position: relative;
+  /* 부모자격 - #screen, .mlist */
+  /* height: 788px; 비율박스를 위해 높이값 없앰 */
+  background: url(../images/bg.jpg) no-repeat 0/100%;
+}
+
+/* 가상요소로 패딩탑 비율높이값 생성*/
+
+.cont::before {
+  content: "";
+  display: block;
+  padding-top: 65.66%;
+  /* 
+    비율 계산하기
+    1200 : 788 = 100 : 65.66
+    x = 65.66% 
+   */
+}
+/* 2-1 스크린 박스 
+
+-> 부모박스 .cont가 비율유지 박스 이므로
+스크린의 top, left, width, height를 모두 퍼센트로
+설정해도 비율을 유지한다. 
+*/
+
+#screen {
+  position: absolute;
+  top: 17.3%;
+  left: 21.4%;
+  width: 58.4%;
+  height: 50.4%;
+  background-color: red;
+  /* outline: 2px dotted lime; */
+}
+/* 스크린 아이프레임 */
+#screen iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.mlist {
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  /* overflow: hidden; .mlist ul로 이동*/
+  /* 부모는? .cont */
+
+  /*X축으로 내 크기의 절반왼쪽 이동 */
+  transform: translateX(-50%);
+}
+/* ul 플렉스 박스 */
+.mlist ul {
+  display: flex;
+  /* 원근설정 */
+  perspective: min(30vw, 480px);
+  /* 오버플로우 히든 설정 */
+  position: relative;
+}
+/*각 li리스트 */
+.mlist ul > li {
+  /* overflow: hidden; overflow: hidden은, 앱솔루트시에 .movtxt의 부모에 숨기기를 적용시켱 한다.*/
+  margin: 0 min(0.8vw, 9px);
+  transition: transform 0.4s ease-in-out;
+  /* x축으로 회전 */
+  transform: rotateX(40deg);
+  /* 회전축을 하단으로 변경  */
+  transform-origin: bottom;
+  overflow: hidden;
+}
+/* li에 마우스 오버시 li 자신 x축 회전 일어남 \
++ li에 클래스 on 적용시 동일
+js로 클릭시 선택메뉴에 클래스 넣기
+*/
+
+.mlist ul > li:hover {
+  transform: rotateX(0deg);
+  position: relative;
+  /* static이 아니므로 z-index가 적용된다. */
+  /* z-index: 1; 마우스를 떼면 효과가 사라져서 이상함. 일일히 중앙에서의 거리에 따라 z-index 주고 픽스함*/
+  outline: 1px solid aquamarine;
+  box-shadow: 0 0 10px aquamarine;
+}
+.mlist ul > li.on {
+  transform: rotateX(0deg);
+  position: relative;
+  /* static이 아니므로 z-index가 적용된다. */
+  /* z-index: 1; 마우스를 떼면 효과가 사라져서 이상함. 일일히 중앙에서의 거리에 따라 z-index 주고 픽스함*/
+  outline: 1px solid aquamarine;
+  box-shadow: 0 0 10px aquamarine;
+}
+.mlist ul > li:first-child,
+.mlist ul > li:last-child {
+  position: relative;
+  z-index: -1;
+}
+.mlist ul > li:nth-child(2),
+.mlist ul > li:nth-child(4) {
+  position: relative;
+  z-index: 0;
+}
+.mlist ul > li:nth-child(3) {
+  position: relative;
+  z-index: 1;
+}
+
+/* 메뉴 포스터 이미지 */
+.mlist img {
+  width: min(8.3vw, 99px);
+  /* height: 140px; -> 이미지 자동비율! 주석! */
+}
+.movtxt {
+  /* 플렉스 박스 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  /* 부모사이즈만큼 아래로 밀기 */
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  /* 가로 , 세로 100%는 부모를 기준한다 */
+  background-color: #000000b5;
+  /* 글자 셋팅 */
+  font-family: "Cute Font", cursive;
+  text-align: center;
+  line-height: 2;
+  font-size: min(1.3vw, 14px);
+  /* 쭐바꿈 방지 */
+  white-space: nowrap;
+
+  /* 트랜지션 속시이지 */
+  transition: top 0.4s ease-out;
+}
+/* .li에 오버시 영화정보 올라오기 */
+.mlist ul > li:hover .movtxt {
+  top: 0;
+}
+
+/* 첫번째 li 영화제목 */
+.movtxt li:first-child {
+  color: aqua;
+  font-size: min(15vw, 17px);
+  letter-spacing: -1px;
+}
+
+/********************* 3. 하단영역  *********************/
+.info {
+  position: relative;
+  /* 부모 자격 - sns */
+  height: 100px;
+}
+/* 3-1. 회사정보 */
+#info address {
+  color: #c3c3c3;
+
+  font-style: normal;
+  font-family: "Cute Font", cursive;
+  font-size: 18px;
+  line-height: 20px;
+  /* 안쪽여백 */
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+/* 하단로고 이미지 */
+#info img {
+  float: left;
+  /* 이미지 자신은 왼쪽, 글자는 오른쪽에 흐르게 함 */
+  float: left;
+  margin-right: 20px;
+}
+
+/* 3-2. sns 박스 */
+ul.sns {
+  position: absolute;
+  top: 35px;
+  right: 20px;
+  /* flex box */
+  display: flex;
+}
+.sns li {
+  width: 34px;
+  height: 34px;
+  background: url(../images/sprites_logo.png) no-repeat;
+  background-position: 0px 0px;
+  margin: 0 2px;
+  filter: grayscale(100%);
+}
+.sns li:hover {
+  filter: grayscale(0%);
+}
+.sns li:nth-child(1) {
+  background-position: -508px -430px;
+}
+.sns li:nth-child(2) {
+  background-position: -550px -430px;
+}
+.sns li:nth-child(3) {
+  background-position: -592px -430px;
+}
+
+/* sns a링크 확장*/
+.sns a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

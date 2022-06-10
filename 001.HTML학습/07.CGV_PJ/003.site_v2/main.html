@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CGV에 오신것을 환영합니다!</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- 미디어쿼리는 본 CSS보다 아래에 넣는다. (덮어씀) -->
+    <link rel="stylesheet" href="css/media.css" />
+    <!-- 외부 js 가져오기 -->
+    <script src="js/main.js"></script>
+  </head>
+
+  <body>
+    <!-- 1. 상단영역 -->
+    <div id="top">
+      <header class="ibx top">
+        <!-- 1-1. 페이지 타이틀 -->
+        <h1 class="tit">CGV 예고편 상영관</h1>
+        <!-- 1-2. 전체메뉴(GNB) -->
+        <nav class="gnb">
+          <ul class="glist">
+            <li>
+              <a href="#">영화</a>
+              <div class="smenu">
+                <ol>
+                  <li><a href="">무비차트</a></li>
+                  <li><a href="">HD 트레일러</a></li>
+                  <li><a href="">무비파인더</a></li>
+                  <li class="bdt"><a href="">CGV아트하우스</a></li>
+                </ol>
+              </div>
+            </li>
+
+            <li>
+              <a href="#">예매</a>
+              <div class="smenu">
+                <ol>
+                  <li><a href="">빠른예매</a></li>
+                  <li><a href="">상영시간표</a></li>
+                </ol>
+              </div>
+            </li>
+            <li>
+              <a href="#">극장</a>
+              <div class="smenu">
+                <ol>
+                  <li><a href="">CGV 극장</a></li>
+                  <li><a href="">특별관</a></li>
+                  <li class="bdt"><a href="">CLUB 서비스</a></li>
+                </ol>
+              </div>
+            </li>
+            <li>
+              <a href="#">이벤트&amp;컬처</a>
+              <div class="smenu">
+                <ol>
+                  <li><a href="">이벤트</a></li>
+                  <li><a href="">기프트샵</a></li>
+                  <li><a href="">매거진</a></li>
+                </ol>
+              </div>
+            </li>
+          </ul>
+          <!-- 영사기 박스 -->
+          <!-- aside 태그 활용 : aside는 중요내용 이외의 컨텐츠를 담는 div 형제요소 -->
+          <aside id="cam">
+            <!-- 영사기 이미지 -->
+            <img src="./images/gnb.png" alt="영사기" />
+            <!-- 빔표시 박스 -->
+            <div class="beam"></div>
+          </aside>
+        </nav>
+      </header>
+    </div>
+
+    <!-- 2. 메인영역 -->
+    <div id="cont">
+      <main class="ibx cont">
+        <!-- 2-1. 스크린 박스 -->
+        <div id="screen">
+          <!-- 유튜브 아이프레임-->
+          <iframe
+            src="https://www.youtube.com/embed/2hnkUpo_2yg?autoplay=1&mute=1&loop=1&playlist=2hnkUpo_2yg&playsinline=1"
+            allow=" autoplay;"
+          ></iframe>
+          <!-- 유튜브 src 값 구성 
+                https://www.youtube.com/embed/동영상ID?옵션
+
+                [물음표 뒤에 옵션 설명]
+                ?
+                autoplay=1 // 자동플레이
+                &
+                mute=1 // 뮤트(자동플레이시 필수!)
+                &
+                loop=1 // 반복재생
+                &
+                playlist=동영상ID -> 반복재생할 동영상ID (필수)
+                & 
+                playsinline=1 -> 아이폰에서 인라인재생
+          -->
+        </div>
+
+        <nav class="mlist">
+          <ul>
+            <li>
+              <a href="#" onclick="chgMV('Lcy1vnU7RHw')">
+                <img src="images/m1.jpg" alt="" />
+                <ol class="movtxt">
+                  <li>범죄도시2</li>
+                  <li>마동석, 손석구, 최귀화</li>
+                  <li>범죄, 액션</li>
+                </ol>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" onclick="chgMV('mI9oyFMUlfg')">
+                <img src="images/m2.jpg" alt="" />
+                <ol class="movtxt">
+                  <li>닥터 스트레인지2</li>
+                  <li>베네딕트 컴버배치</li>
+                  <li>액션, 판타지, 모험</li>
+                </ol>
+              </a>
+            </li>
+            <li>
+              <a href="#" onclick="chgMV('OTiqmI6Ooqs')">
+                <img src="images/m3.jpg" alt="" />
+                <ol class="movtxt">
+                  <li>몬스터 싱어</li>
+                  <li>바네사 파라디</li>
+                  <li>애니메이션, 뮤지컬, 모험</li>
+                </ol>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" onclick="chgMV('57YJYXmA7xE')">
+                <img src="images/m4.jpg" alt="" />
+                <ol class="movtxt">
+                  <li>배드 가이즈</li>
+                  <li>샘 록웰</li>
+                  <li>애니메이션, 범죄, 액션</li>
+                </ol>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" onclick="chgMV('Spzy78ia3ag')">
+                <img src="images/m5.jpg" alt="" />
+                <ol class="movtxt">
+                  <li>인연을 긋다</li>
+                  <li>정영숙, 김지영</li>
+                  <li>드라마</li>
+                </ol>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </main>
+    </div>
+
+    <!-- 3. 하단영역 -->
+    <div id="info">
+      <footer class="ibx info">
+        <address>
+          <img src="./images/blogo.png" alt="하단로고" />
+          <span
+            >(04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰
+            6층(한강로동)<br />
+            대표이사 : 최병환사업자등록번호 : 104-81-45690통신판매업신고번호 :
+            2017-서울용산-0662<br />
+            개인정보보호 책임자 : 정종민대표이메일 :
+            cjcgvmaster@cj.netCGV고객센터 : 1544-1122
+          </span>
+        </address>
+        <!-- 3-2 sns box -->
+        <ul class="sns">
+          <li>
+            <a
+              href="https://www.facebook.com/CJCGV"
+              title="페이스북 바로가기"
+              target="_blank"
+              ><span class="ir">페이스북 바로가기</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/CGV_ID"
+              title="트위터 바로가기"
+              target="_blank "
+              ><span class="ir">트위터 바로가기</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/cgv_korea"
+              title="인스타그램 바로가기"
+              target="_blank "
+              ><span class="ir">인스타그램 바로가기</span></a
+            >
+          </li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>

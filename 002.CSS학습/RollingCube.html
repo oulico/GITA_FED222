@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        /*높이값 기준*/
+      }
+      body {
+        background-image: linear-gradient(to bottom, #777 30%, #ccc 70%);
+      }
+      /* 큐브 */
+      .cube {
+        position: absolute;
+        top: calc(50% - 150px);
+        left: calc(50% - 150px);
+        width: 300px;
+        height: 300px;
+
+        /*
+          [입체로 설정하기]
+          - 입체로 설정할 요소의 부모박스에 아래와 같이 설정한다!
+          
+          transform-style: preserve-3d;
+          - 기본값 flat, 즉 2D
+          - preserve-3d는 3d 전환 설정
+        */
+        transform-style: preserve-3d;
+
+        /* 입체를 잘보이게 x,y축으로 약간 회전하기 */
+        transform: rotateX(10deg) rotateY(30deg);
+      }
+      /* 큐브 각면 공통*/
+      .cube > span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        outline: 2px solid black;
+      }
+
+      /*1. 앞면 */
+
+      .cube > span:first-child {
+        background: url(images/newyorkCity.jpg) no-repeat right/cover;
+        /*화면방향 - z축*/
+        transform: translateZ(150px);
+      }
+      .cube > span:nth-child(2) {
+        background: url(images/seoulCity.jpg) no-repeat center/cover;
+        /*화면방향 - z축*/
+        transform: rotateY(90deg) translateZ(150px);
+        /* 먼저 y축 회전 후 화면방향 이동(회전했으니 오른쪽임) */
+      }
+      .cube > span:nth-child(3) {
+        background: url(images/parisCity.jpg) no-repeat center/cover;
+        /*화면방향 - z축*/
+        transform: rotateY(180deg) translateZ(150px);
+        /* 먼저 y축 회전 후 화면방향 이동(회전했으니 오른쪽임) */
+      }
+      .cube > span:nth-child(4) {
+        background: url(images/cityMain.jpg) no-repeat center/cover;
+        /*화면방향 - z축*/
+        transform: rotateY(-90deg) translateZ(150px);
+        /* 먼저 y축 회전 후 화면방향 이동(회전했으니 오른쪽임) */
+      }
+      .cube > span:nth-child(5) {
+        background: url(images/citys.jpg) no-repeat center/cover;
+        /*화면방향 - z축*/
+        transform: rotateX(90deg) translateZ(150px);
+        /* 먼저 y축 회전 후 화면방향 이동(회전했으니 오른쪽임) */
+      }
+      /* 아랫면 */
+      .cube > span:nth-child(6) {
+        background: url(images/img2.jpg) no-repeat center/cover;
+        /*화면방향 - z축*/
+        transform: rotateX(90deg) translateZ(-150px);
+        /* 먼저 y축 회전 후 화면방향 이동(회전했으니 오른쪽임) */
+      }
+
+      .btns {
+        text-align: center;
+        padding: 50px;
+      }
+      .btns button {
+        font-size: 40px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      /* 애니메이션 클래스 */
+      .cube-ani {
+        /* 애니메이션: 이시이지반방마 */
+        animation: cubeAni 5s linear infinite;
+        animation-play-state: paused;
+      }
+
+      /* 클래스 on 추가시 애니메이션 작동하기 */
+      .cube-ani.on {
+        animation-play-state: running;
+      }
+      /* 회전 키프레임 */
+      @keyframes cubeAni {
+        to {
+          transform: rotateX(370deg) rotateY(-330deg);
+          /* 
+            X축 양의 방향 10도에서 출발
+            양의 방향 360도 + 10도 = 370도
+            음의 방향 -360도 + 10eh = -350도
+            
+            Y축 양의 방향 30도에서 출발
+            양의 방향 360도 + 30도 = 390도
+            음의 방향 -360도 + 30도 = -330도
+
+            Z축은 필요시 적용
+
+          
+          */
+        }
+      }
+    </style>
+    <script>
+      window.addEventListener("load", () => {
+        console.log("로딩완료");
+
+        let btns = document.querySelectorAll(".btns button");
+        //console.log("Buttons:", btns);
+
+        // 변경대상 : .cube-ani
+
+        let tg = document.querySelector(".cube-ani");
+        console.log(tg);
+
+        // 버튼에 클릭 이벤트 설정
+        // 여러버튼에 걸어야 하니 for of문
+        for (let x of btns) {
+          x.onclick = () => {
+            console.log(x.innerText);
+            let txt = x.innerText;
+
+            if (txt === "돌아!") {
+              tg.classList.add("on");
+            } else if (txt === "멈춰!") {
+              tg.classList.remove("on");
+            }
+          }; /////////// click //////////
+        } ////////////////////for of///////////////////////
+      }); ///////////////// 로드구역 //////////////////////
+    </script>
+  </head>
+  <body>
+    <!-- 버튼박스 -->
+    <div class="btns">
+      <button>돌아!</button>
+      <button>멈춰!</button>
+    </div>
+    <!-- 큐브 -->
+    <div class="cube cube-ani">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </body>
+</html>
