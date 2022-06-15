@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+/* 보그 PJ 공통 css - common css */
+/* 상단, 하단 공통 모듈 */
+
+/******************* 1. 상단영역 ****************************/
+.top {
+  height: 206px;
+}
+.tmenu {
+  /* 플렉스 박스 */
+  display: flex;
+  max-width: 970px;
+  height: 44px;
+  margin: 0 auto;
+}
+
+/* 플렉스 박스의 직계 자식 div*/
+.tmenu > div {
+  flex: 1;
+  /* 등분할 박스 + 높이값 자동채움 */
+}
+/* 1 -1 -1. sns 박스 */
+.sns a {
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  vertical-align: top;
+  margin-top: 14px;
+  margin-right: 17px;
+}
+.sns a.fi-twitter {
+  font-size: 13px;
+}
+
+/* 유튜브 아이콘 조정 */
+.sns a.fi-youtube-play {
+  font-size: 11px;
+}
+
+/* 유튜브 가상요소 크기조정(Y축만 */
+.sns a.fi-youtube-play::before {
+  transform: scaleY(1.2);
+  display: inline-block;
+  /* 인라인은 트랜스폼이 적용이 안되기 때문! */
+}
+
+/* sns 마지막 a요소에 카스이미지 배경이미지로 넣기 */
+.sns a:last-child {
+  background: url(../images/sns_kakao.png) no-repeat center/auto 100%;
+}
+
+.smbx {
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Roboto", nbg, sans-serif;
+  font-size: 12px;
+}
+
+.smbx > li > a {
+  display: block;
+  padding: 0 13px;
+  line-height: 44px;
+  color: #747474;
+}
+
+/* 메뉴 사이 구분선 넣기 */
+.smbx > li:first-child {
+  border-right: 1px solid grey;
+}
+
+/* 사이드 메뉴 서브 박스 */
+.smsub {
+  position: absolute;
+  border: 1px solid #e5e5e5;
+  /* 젠틀 앱솔루트 */
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* 상위 메뉴 li에 오버시 하위메뉴 보이기 */
+.smbx > li:hover .smsub {
+  transition: opacity 0.4s ease-in-out;
+  opacity: 1;
+  /* 원래 자기 크기의 높이값 복원 */
+  height: auto;
+}
+
+/* 서브메뉴 a요소 */
+.smsub a {
+  display: block;
+  padding: 7px 10px;
+  padding-right: 20px;
+  color: #747474;
+
+  /* 트랜지션 */
+  transition: 0.2s ease-in-out;
+}
+/* 서브메뉴 a요소에 마우스 오버시 */
+.smsub a:hover {
+  background-color: #fafafa;
+  color: #333;
+}
+
+/* 1-2 로고박스 */
+
+.logo {
+  text-align: center;
+}
+
+/* 1-3gnb 박스 */
+
+.gnb {
+  /* 글자 설정 */
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 16px;
+  line-height: 40px;
+
+  padding: 0 30px;
+}
+
+.gnb ul {
+  display: flex;
+  justify-content: center;
+}
+
+.gnb li {
+  padding-right: 45px;
+}
+
+.gnb li:last-child {
+  padding: 0;
+}
+
+/*마지막 li의 a돋보기*/
+.gnb li:last-child a {
+  font-weight: bold;
+}
+
+/******************* 2. 하단영역 ****************************/
+
+.info {
+  height: 285px;
+}

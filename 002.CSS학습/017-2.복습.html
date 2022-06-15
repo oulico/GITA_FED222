@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      /* 비율유지 박스
+      블록박스인 자식요소에 패딩탑을 퍼센트로 주면 부모박스 가로크기에 대한 일정비가 생긴다!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      그런데....
+      div를 만들어 놓으면, 분명히 다른사람이 건드려서 다 망가질 것이다!!!!
+      그러니까 함부로 못건드리게 "가상요소"를 쓰자!!-> line 25
+       */
+      .rbx {
+        width: 50%;
+        background: url(./images/mobum.jpg) no-repeat center/cover;
+        margin: 0 auto;
+      }
+      /* 비율유지 가상요소 */
+      .rbx::before {
+        content: "";
+        display: block;
+        /* 그냥 내버려두면, span이나 마찬가지임. 블록으로 바꿔서 div처럼 만들어라 
+        블록을 줘야만 패딩탑값이 가로크기가 퍼센트를 줬을 때, 부모박스 가로 크기에 대한 일정비를 형성한다*/
+        padding-top: 52.47%;
+        /* 
+          [내가 원하는 비율 계산하기]
+          패딩탑 100%가 부모박스 가로크기의 1:1비율이므로
+          이미지비를 식으로 쓰면...
+          1170 : 614 = 100 : x
+         61400 = 1170x
+         x = 52.47
+         x값이 패딩탑 퍼센트 값이다
+        */
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="rbx">
+      <!-- <div style="padding-top: 100%"></div> -->
+      <dl class="cat">
+        <dt>출연진</dt>
+        <dd>이제훈</dd>
+        <dd>이제훈</dd>
+        <dd>이제훈</dd>
+      </dl>
+    </div>
+  </body>
+</html>
